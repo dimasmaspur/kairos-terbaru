@@ -48,6 +48,7 @@ module.exports = async (req, res) => {
             jo_number: jobOrder.jo_number,
             type: jobOrder.type,
             customer_name: jobOrder.customer_name,
+            quo_number: jobOrder.quo_number,
             terms_payment: jobOrder.terms_payment,
             subject: jobOrder.subject,
             created_at: jobOrder.createdAt,

@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        quo_number: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         subject: {
             type: DataTypes.STRING,
             allowNull: false

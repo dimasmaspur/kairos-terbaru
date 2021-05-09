@@ -40,6 +40,9 @@ module.exports = async (req, res, next) => {
         ocean_freight: req.body.ocean_freight,
         deskripsi_header: req.body.deskripsi_header,
         deskripsi_footer: req.body.deskripsi_footer,
+        status: req.body.status,
+        creator: req.body.creator,
+        branch_office: req.body.branch_office
     };
 
 
@@ -79,6 +82,9 @@ module.exports = async (req, res, next) => {
                 ocean_freight: data.ocean_freight,
                 deskripsi_header: data.deskripsi_header,
                 deskripsi_footer: data.deskripsi_footer,
+                status: data.status,
+                creator: data.creator,
+                branch_office: data.branch_office,
                 created_at: quotation.createdAt,
                 updated_at: quotation.updatedAt
             }

@@ -56,6 +56,18 @@ module.exports = (sequelize, DataTypes) => {
         customer_name: {
             type: DataTypes.STRING,
             allowNull: false
+        }, 
+        status: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        creator: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        branch_office: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         agen_rate: {
             type: DataTypes.INTEGER,

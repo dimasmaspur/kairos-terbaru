@@ -20,6 +20,7 @@ module.exports = async (req, res, next) => {
     const data = {
         type: req.body.type,
         customer_name: req.body.customer_name,
+        quo_number: req.body.quo_number,
         subject: req.body.subject,
         terms_payment: req.body.terms_payment
     };
@@ -43,6 +44,7 @@ module.exports = async (req, res, next) => {
                 jo_number: jobOrder.jo_number,
                 type: data.type,
                 customer_name: data.customer_name,
+                quo_number: data.quo_number,
                 subject: data.subject,
                 terms_payment: data.terms_payment,
                 created_at: jobOrder.createdAt,
