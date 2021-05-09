@@ -1,0 +1,72 @@
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const jobOrderRouter = require('./routes/job_order');
+const joDataRouter = require('./routes/jo_data');
+const dataPartnerRouter = require('./routes/data_partner');
+const dataCostRouter = require('./routes/data_cost');
+const joDebitNote = require('./routes/jo_debitnote');
+const joPayRequest = require('./routes/payrequest_jo');
+const joPayRequestCost = require('./routes/cost_payrequest');
+const joCreditNote = require('./routes/jo_creditnote');
+const debitNoteCost = require('./routes/debitnote_cost');
+const creditNoteCost = require('./routes/creditnote_cost');
+const joInvoice = require('./routes/data_invoice');
+const invoiceCost = require('./routes/invoice_cost');
+const jobConsolRouter = require('./routes/job_consol');
+const rebateIncomeRouter = require('./routes/joc_rebate_income');
+const rebateExpenseRouter = require('./routes/joc_rebate_expense');
+const rebateIncomeCostRouter = require('./routes/rebate_income_cost');
+const rebateExpenseCostRouter = require('./routes/rebate_expense_cost');
+const jocPayRequestRouter = require('./routes/joc_payrequest');
+const jocPayRequestCostRouter = require('./routes/joc_payrequest_cost');
+const jocData = require('./routes/joc_consol');
+const quotationRouter = require('./routes/quotation');
+const quotationInvoiceRouter = require('./routes/quotation_invoice');
+const quotationPayrequestRouter = require('./routes/quotation_payrequest');
+const dataPortRouter = require('./routes/data_port');
+const databranchRouter = require('./routes/data_branch');
+
+const app = express();
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/job-order', jobOrderRouter);
+app.use('/data-partner', dataPartnerRouter);
+app.use('/data-cost', dataCostRouter);
+app.use('/jo-data', joDataRouter);
+app.use('/jo-debitnote', joDebitNote);
+app.use('/jo-payrequest', joPayRequest);
+app.use('/payrequest-cost', joPayRequestCost);
+app.use('/debitnote-cost', debitNoteCost);
+app.use('/jo-creditnote', joCreditNote);
+app.use('/creditnote-cost', creditNoteCost);
+app.use('/jo-invoice', joInvoice);
+app.use('/invoice-cost', invoiceCost);
+app.use('/job-consol', jobConsolRouter);
+app.use('/joc-rebate-income', rebateIncomeRouter);
+app.use('/joc-rebate-expense', rebateExpenseRouter);
+app.use('/rebate-income-cost', rebateIncomeCostRouter);
+app.use('/rebate-expense-cost', rebateExpenseCostRouter);
+app.use('/joc-payrequest', jocPayRequestRouter);
+app.use('/joc-payrequest-cost', jocPayRequestCostRouter);
+app.use('/joc-data', jocData);
+
+app.use('/quotation', quotationRouter);
+app.use('/quotation-invoice', quotationInvoiceRouter);
+app.use('/quotation-payrequest', quotationPayrequestRouter);
+app.use('/data-port', dataPortRouter);
+app.use('/data-branch', databranchRouter);
+
+module.exports = app;
