@@ -42,7 +42,8 @@ module.exports = async (req, res, next) => {
         deskripsi_footer: req.body.deskripsi_footer,
         status: req.body.status,
         creator: req.body.creator,
-        branch_office: req.body.branch_office
+        branch_office: req.body.branch_office,
+        bl_number: req.body.bl_number
     };
 
 
@@ -85,6 +86,7 @@ module.exports = async (req, res, next) => {
                 status: data.status,
                 creator: data.creator,
                 branch_office: data.branch_office,
+                bl_number: data.bl_number,
                 created_at: quotation.createdAt,
                 updated_at: quotation.updatedAt
             }

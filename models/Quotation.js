@@ -69,6 +69,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
+        bl_number: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         agen_rate: {
             type: DataTypes.INTEGER,
             allowNull: true

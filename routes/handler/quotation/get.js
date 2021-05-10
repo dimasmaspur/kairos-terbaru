@@ -50,6 +50,7 @@ module.exports = async (req, res) => {
             status: quotation.status,
             creator: quotation.creator,
             branch_office: quotation.branch_office,
+            bl_number: quotation.bl_number,
             created_at: quotation.createdAt,
             updated_at: quotation.updatedAt,
             quotationInvoice,

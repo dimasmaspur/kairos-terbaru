@@ -27,7 +27,6 @@ module.exports = async (req, res, next) => {
         measurement: 'string|empty:false',
         net_weight: 'string|empty:false',
         gross_weight: 'string|empty:false',
-        marketing: 'string|empty:true',
         creator: 'string|empty:true',
 	freight_note: 'string|empty:false',
         shipper: 'string|empty:false'
@@ -68,7 +67,6 @@ module.exports = async (req, res, next) => {
         measurement: req.body.measurement,
         net_weight: req.body.net_weight,
         gross_weight: req.body.gross_weight,
-        marketing: req.body.marketing,
         creator: req.body.creator,
 	freight_note: req.body.freight_note,
         shipper: req.body.shipper
@@ -118,7 +116,6 @@ module.exports = async (req, res, next) => {
                 measurement: data.measurement,
                 net_weight: data.net_weight,
                 gross_weight: data.gross_weight,
-                marketing: data.marketing,
                 creator: data.creator,
 		freight_note: data.freight_note,
                 shipper: data.shipper,

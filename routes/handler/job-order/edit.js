@@ -21,6 +21,7 @@ module.exports = async (req, res, next) => {
         type: req.body.type,
         customer_name: req.body.customer_name,
         quo_number: req.body.quo_number,
+        marketing: req.body.marketing,
         subject: req.body.subject,
         terms_payment: req.body.terms_payment
     };
@@ -45,6 +46,7 @@ module.exports = async (req, res, next) => {
                 type: data.type,
                 customer_name: data.customer_name,
                 quo_number: data.quo_number,
+                marketing: data.marketing,
                 subject: data.subject,
                 terms_payment: data.terms_payment,
                 created_at: jobOrder.createdAt,

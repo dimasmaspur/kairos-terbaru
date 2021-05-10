@@ -30,9 +30,8 @@ module.exports = async (req, res, next) => {
         measurement: 'string|empty:false',
         net_weight: 'string|empty:false',
         gross_weight: 'string|empty:false',
-        marketing:'string|empty:true',
         creator: 'string|empty:true',
-	freight_note: 'string|empty:false',
+	    freight_note: 'string|empty:false',
         shipper: 'string|empty:false'
     }
     const validate = v.validate(req.body, schema);
@@ -83,7 +82,6 @@ module.exports = async (req, res, next) => {
         measurement: req.body.measurement,
         net_weight: req.body.net_weight,
         gross_weight: req.body.gross_weight,
-        marketing: req.body.marketing,
         creator: req.body.creator,
 	freight_note: req.body.freight_note,
         shipper: req.body.shipper
@@ -124,7 +122,6 @@ module.exports = async (req, res, next) => {
                 measurement: joData.measurement,
                 net_weight: joData.net_weight,
                 gross_weight: joData.gross_weight,
-                marketing: joData.marketing,
                 creator: joData.creator,
 		freight_note: joData.freight_note,
                 shipper: joData.shipper,

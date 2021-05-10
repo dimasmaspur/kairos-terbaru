@@ -22,7 +22,7 @@ module.exports = async (req, res, next) => {
         quantity: req.body.quantity,
         price: req.body.price,
         currency: req.body.currency,
-        note: req.body.note,
+        notes: req.body.notes,
         amount_IDR: req.body.currency === 'IDR' ? req.body.quantity * req.body.price : 0,
         amount_USD: req.body.currency === 'USD' ? req.body.quantity * req.body.price : 0,
     };
@@ -49,7 +49,7 @@ module.exports = async (req, res, next) => {
                 quantity: data.quantity,
                 price: data.price,
                 currency: data.currency,
-                note: data.note,
+                notes: data.notes,
                 amount_IDR: quotation.amount_IDR,
                 amount_USD: quotation.amount_USD,
                 created_at: quotation.createdAt,

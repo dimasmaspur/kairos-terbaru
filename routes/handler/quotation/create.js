@@ -47,6 +47,7 @@ module.exports = async (req, res, next) => {
         status: req.body.status,
         creator: req.body.creator,
         branch_office: req.body.branch_office,
+        bl_number: req.body.bl_number,
     };
 
     try {
@@ -80,6 +81,7 @@ module.exports = async (req, res, next) => {
                 status: quotation.status,
                 creator: quotation.creator,
                 branch_office: quotation.branch_office,
+                bl_number: quotation.bl_number,
                 created_at: quotation.createdAt,
                 updated_at: quotation.updatedAt
 

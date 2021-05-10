@@ -134,10 +134,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-	marketing: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
         creator: {
             type: DataTypes.STRING,
             allowNull: true

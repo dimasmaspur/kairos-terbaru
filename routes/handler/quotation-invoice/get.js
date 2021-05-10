@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
             quantity: quotationInvoice.quantity,
             price: quotationInvoice.price,
             currency: quotationInvoice.currency,
-            note: quotationInvoice.note,
+            notes: quotationInvoice.notes,
             amount_IDR: quotationInvoice.amount_IDR,
             amount_USD: quotationInvoice.amount_USD,
             created_at: quotationInvoice.createdAt,
