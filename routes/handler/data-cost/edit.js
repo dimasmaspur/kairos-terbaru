@@ -16,6 +16,7 @@ module.exports = async (req, res, next) => {
 
     const data = {
         cost_name: req.body.cost_name,
+        creator: req.body.creator,
         type: req.body.type,
         status: req.body.status
     };
@@ -38,6 +39,7 @@ module.exports = async (req, res, next) => {
                 id: id,
                 created_by: dataCost.created_by,
                 cost_name: data.cost_name,
+                creator: data.creator,
                 type: data.type,
                 status: data.status,
                 created_at: data.createdAt,

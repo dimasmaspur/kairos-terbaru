@@ -28,6 +28,7 @@ module.exports = async (req, res, next) => {
 
     const data = {
         created_by: cekjwt.name,
+        creator: req.body.creator,
         cost_name: req.body.cost_name,
         type: req.body.type,
         status: req.body.status
@@ -42,6 +43,7 @@ module.exports = async (req, res, next) => {
                 id: dataCost.id,
                 created_by: dataCost.created_by,
                 cost_name: dataCost.cost_name,
+                creator: dataCost.creator,
                 type: dataCost.type,
                 status: dataCost.status,
                 created_at: dataCost.createdAt,

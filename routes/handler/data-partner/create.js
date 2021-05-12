@@ -45,6 +45,7 @@ module.exports = async (req, res, next) => {
     const data = {
         created_by: cekjwt.name,
         company_name: req.body.company_name,
+        creator: req.body.creator,
         type: req.body.type,
         contact_person: req.body.contact_person,
         npwp: req.body.npwp,
@@ -69,6 +70,7 @@ module.exports = async (req, res, next) => {
                 id: dataPartner.id,
                 created_by: dataPartner.created_by,
                 company_name: dataPartner.company_name,
+                creator: dataPartner.creator,
                 type: dataPartner.type,
                 contact_person: dataPartner.contact_person,
                 npwp: dataPartner.npwp,

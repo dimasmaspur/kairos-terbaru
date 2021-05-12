@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        creator: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         type: {
             type: DataTypes.ENUM,
             values: ["refund", "not found"],
