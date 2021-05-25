@@ -14,6 +14,18 @@ module.exports = (sequelize, DataTypes) => {
                 key: 'joc_number'
             },
         },
+        jo_number: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        customer_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        destination: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         bl_number: {
             type: DataTypes.STRING,
             allowNull: false

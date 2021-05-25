@@ -7,6 +7,7 @@ module.exports = async (req, res, next) => {
     // validasi formnya
     const schema = {
         joc_number: 'string|empty:false',
+        jo_number: 'string|empty:false',
         bl_number: 'string|empty:false',
         mbl_number: 'string|empty:false',
         freight_type: 'string|empty:false',
@@ -45,11 +46,11 @@ module.exports = async (req, res, next) => {
     if (!jo) {
         return res.status(404).json({ status: 'error', message: 'JOC Number not found' });
     }
-    const joData = await JocConsol.findOne({ where: { joc_number: req.body.joc_number } });
+    // const joData = await JocConsol.findOne({ where: { joc_number: req.body.joc_number } });
 
-    if (joData) {
-        return res.status(404).json({ status: 'error', message: 'This JO already exists!' });
-    }
+    // if (joData) {
+    //     return res.status(404).json({ status: 'error', message: 'This JO already exists!' });
+    // }
     // const checkJoNumber = await jocConsol.findOne({ where: { joc_number: req.body.joc_number } });
     // if (checkJoNumber) {
     //     return res.status(400).json({ status: 'error', message: 'JOC Number already exists!' });
@@ -83,7 +84,10 @@ module.exports = async (req, res, next) => {
         type: req.body.type,
         measurement: req.body.measurement,
         net_weight: req.body.net_weight,
-        gross_weight: req.body.gross_weight
+        gross_weight: req.body.gross_weight,
+        jo_number: req.body.jo_number,
+        customer_name: req.body.customer_name,
+        destination: req.body.destination
     };
 
     try {
@@ -121,6 +125,9 @@ module.exports = async (req, res, next) => {
                 measurement: jocConsol.measurement,
                 net_weight: jocConsol.net_weight,
                 gross_weight: jocConsol.gross_weight,
+                jo_number: jocConsol.jo_number,
+                customer_name: jocConsol.customer_name,
+                destination: jocConsol.destination,
                 created_at: jocConsol.createdAt,
                 updated_at: jocConsol.updatedAt
 
