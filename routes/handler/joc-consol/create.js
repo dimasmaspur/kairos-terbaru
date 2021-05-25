@@ -45,6 +45,11 @@ module.exports = async (req, res, next) => {
     if (!jo) {
         return res.status(404).json({ status: 'error', message: 'JOC Number not found' });
     }
+    const joData = await JocConsol.findOne({ where: { joc_number: req.body.joc_number } });
+
+    if (joData) {
+        return res.status(404).json({ status: 'error', message: 'This JO already exists!' });
+    }
     // const checkJoNumber = await jocConsol.findOne({ where: { joc_number: req.body.joc_number } });
     // if (checkJoNumber) {
     //     return res.status(400).json({ status: 'error', message: 'JOC Number already exists!' });
