@@ -34,6 +34,8 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db["JobOrder"].belongsTo(db["PayRequestJo"], { foreignKey: 'jo_number' });
+db["PayRequestJo"].hasOne(db["JobOrder"], { foreignKey: 'jo_number' });
 // job order
 db["JobOrder"].hasOne(db["JoData"], { foreignKey: 'jo_number' });
 db["JoData"].belongsTo(db["JobOrder"], { foreignKey: 'jo_number' });
