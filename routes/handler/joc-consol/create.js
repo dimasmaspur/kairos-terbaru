@@ -30,7 +30,7 @@ module.exports = async (req, res, next) => {
         seal_number: 'string|empty:false',
         measurement: 'string|empty:false',
         net_weight: 'string|empty:false',
-        gross_weight: 'string|empty:false'
+        gross_weight: 'string|empty:false',
     }
     const validate = v.validate(req.body, schema);
     if (validate.length) {
@@ -87,7 +87,9 @@ module.exports = async (req, res, next) => {
         gross_weight: req.body.gross_weight,
         jo_number: req.body.jo_number,
         customer_name: req.body.customer_name,
-        destination: req.body.destination
+        destination: req.body.destination,
+        gross_profit_idr: req.body.gross_profit_idr,
+        gross_profit_usd: req.body.gross_profit_usd
     };
 
     try {
@@ -128,6 +130,8 @@ module.exports = async (req, res, next) => {
                 jo_number: jocConsol.jo_number,
                 customer_name: jocConsol.customer_name,
                 destination: jocConsol.destination,
+                gross_profit_idr: jocConsol.gross_profit_idr,
+                gross_profit_usd: jocConsol.gross_profit_usd,
                 created_at: jocConsol.createdAt,
                 updated_at: jocConsol.updatedAt
 

@@ -138,6 +138,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        gross_profit_idr: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        gross_profit_usd: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         createdAt: {
             field: 'created_at',
             type: DataTypes.DATE,
