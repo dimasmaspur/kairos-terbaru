@@ -35,7 +35,7 @@ module.exports = async (req, res, next) => {
         return res.status(404).json({ status: 'error', message: 'id not found' });
     }
     const selector = {
-        where: { id: id }
+        where: { id_invoice: id }
     };
 
     try {

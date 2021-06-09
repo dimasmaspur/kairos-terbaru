@@ -18,13 +18,13 @@ module.exports = async (req, res, next) => {
         });
     }
 
-    const idinvoice = await Invoice.findOne({ where: { id: req.body.id_invoice } });
+    const idinvoice = await Invoice.findOne({ where: { id_invoice: req.body.id_invoice } });
     if (!idinvoice) {
         return res.status(404).json({ status: 'error', message: 'id invoice not found' });
     }
 
     const data = {
-        id_invoice: idinvoice.id,
+        id_invoice: idinvoice.id_invoice,
         kode: req.body.kode,
         item_cost: req.body.item_cost,
         unit: req.body.unit,

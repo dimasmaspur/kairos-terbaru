@@ -52,7 +52,7 @@ module.exports = async (req, res, next) => {
         return res.json({
             status: "success",
             data: {
-                id: invoice.id,
+                id: invoice.id_invoice,
                 jo_number: invoice.jo_number,
                 kode: invoice.kode,
                 invoice_to: invoice.invoice_to,
