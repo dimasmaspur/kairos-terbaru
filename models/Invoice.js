@@ -1,7 +1,7 @@
 const JobOrder = require('./JobOrder');
 module.exports = (sequelize, DataTypes) => {
     const Invoice = sequelize.define('Invoice', {
-        id: {
+        id_invoice: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,

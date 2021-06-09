@@ -64,7 +64,7 @@ db["CreditNoteCost"].belongsTo(db["JoCreditNote"], { foreignKey: 'id_credit_note
 db["PayRequestJo"].hasMany(db["CostPayRequest"], { foreignKey: 'id_payrequest' });
 db["CostPayRequest"].belongsTo(db["PayRequestJo"], { foreignKey: 'id_payrequest' });
 
-db["Invoice"].hasMany(db["InvoiceCost"], { foreignKey: 'id' });
+db["Invoice"].hasMany(db["InvoiceCost"], { foreignKey: 'id_invoice' });
 db["InvoiceCost"].belongsTo(db["Invoice"], { foreignKey: 'id_invoice' });
 
 db["DebitNoteCost"].hasMany(db["DebitNoteCost"], { foreignKey: 'id_debit_note' });
