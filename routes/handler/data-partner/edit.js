@@ -3,29 +3,29 @@ const v = new Validator();
 const { DataPartner } = require('../../../models');
 
 module.exports = async (req, res, next) => {
-    const schema = {
-        company_name: 'string|empty:false',
-        type: 'string|empty:false',
-        contact_person: 'string|empty:false',
-        npwp: 'string|empty:false',
-        address: 'string|empty:false',
-        city: 'string|empty:false',
-        country: 'string|empty:false',
-        postal_code: 'string|empty:false',
-        phone_number: 'string|empty:false',
-        fax_number: 'string|empty:false',
-        mobile_number: 'string|empty:false',
-        email: 'email|empty:false',
-        website: 'string|empty:false',
-        status: 'string|empty:false'
-    }
-    const validate = v.validate(req.body, schema);
-    if (validate.length) {
-        return res.status(400).json({
-            status: 'error',
-            message: validate
-        });
-    }
+    // const schema = {
+    //     company_name: 'string|empty:false',
+    //     type: 'string|empty:false',
+    //     contact_person: 'string|empty:false',
+    //     npwp: 'string|empty:false',
+    //     address: 'string|empty:false',
+    //     city: 'string|empty:false',
+    //     country: 'string|empty:false',
+    //     postal_code: 'string|empty:false',
+    //     phone_number: 'string|empty:false',
+    //     fax_number: 'string|empty:false',
+    //     mobile_number: 'string|empty:false',
+    //     email: 'email|empty:false',
+    //     website: 'string|empty:false',
+    //     status: 'string|empty:false'
+    // }
+    // const validate = v.validate(req.body, schema);
+    // if (validate.length) {
+    //     return res.status(400).json({
+    //         status: 'error',
+    //         message: validate
+    //     });
+    // }
 
     const data = {
         company_name: req.body.company_name,
