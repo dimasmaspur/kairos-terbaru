@@ -3,17 +3,17 @@ const v = new Validator();
 const { DataPort } = require('../../../models');
 
 module.exports = async (req, res, next) => {
-    const schema = {
-        port_name: 'string|empty:false',
-        country: 'string|empty:false',
-    }
-    const validate = v.validate(req.body, schema);
-    if (validate.length) {
-        return res.status(400).json({
-            status: 'error',
-            message: validate
-        });
-    }
+    // const schema = {
+    //     port_name: 'string|empty:false',
+    //     country: 'string|empty:false',
+    // }
+    // const validate = v.validate(req.body, schema);
+    // if (validate.length) {
+    //     return res.status(400).json({
+    //         status: 'error',
+    //         message: validate
+    //     });
+    // }
 
     const data = {
         port_name: req.body.port_name,

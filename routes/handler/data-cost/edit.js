@@ -3,16 +3,16 @@ const v = new Validator();
 const { DataCost } = require('../../../models');
 
 module.exports = async (req, res, next) => {
-    const schema = {
-        cost_name: 'string|empty:false',
-    }
-    const validate = v.validate(req.body, schema);
-    if (validate.length) {
-        return res.status(400).json({
-            status: 'error',
-            message: validate
-        });
-    }
+    // const schema = {
+    //     cost_name: 'string|empty:false',
+    // }
+    // const validate = v.validate(req.body, schema);
+    // if (validate.length) {
+    //     return res.status(400).json({
+    //         status: 'error',
+    //         message: validate
+    //     });
+    // }
 
     const data = {
         cost_name: req.body.cost_name,
